@@ -18,8 +18,8 @@ b = np.array([12,19,17,28,31,33,42,38,51,49])
 model = LinearRegression(3)
 start = time.time()
 for _ in range(10000):
-    model.Step(a, b, Stochastic=True)
+    model.Step(a, b, Optimizers.StochasticGradientDescent)
     if _ % 500 == 0:
-        print(f"Epoch {_} | Loss: {model.Loss(a,b)}")
+        print(f"Epoch {_} | Loss: {model.Loss(a,b,Loss.MSE)}")
 print(time.time()-start)
 print(model.w,model.b)
