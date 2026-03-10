@@ -18,10 +18,13 @@ Numpy , Pandas(not used yet)
 - test.py  |Where the main code is run
 
 - LinearRegression.py  |Containing the model class
+- LogisticRegression.py  |Containing the model class
 
 - Loss.py |Containting Loss Functions
 
 - Optimizers.py |Containing Optmizers functions
+
+- Activation.py |Containing Activation functions
 ---
 
 

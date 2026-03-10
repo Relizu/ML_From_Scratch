@@ -1,25 +1,32 @@
 import numpy as np
 import time
 
-from LinearRegression import *
+from LogisticRegression import *
 
-a = np.array([[1,2,3],
-              [2,3,4],
-              [3,1,2],
-              [4,5,1],
-              [5,2,6],
-              [6,3,2],
-              [7,4,5],
-              [8,1,3],
-              [9,6,2],
-              [10,2,4]])
-b = np.array([12,19,17,28,31,33,42,38,51,49])
+a = np.array([
+    [1, 4, 0],
+    [2, 5, 1],
+    [1, 6, 0],
+    [3, 4, 1],
+    [4, 7, 2],
+    [5, 6, 2],
+    [6, 8, 3],
+    [7, 5, 3],
+    [8, 7, 4],
+    [9, 8, 5],
+])
 
-model = LinearRegression(3)
+
+b = np.array([0, 0, 0, 0, 1, 1, 1, 1, 1, 1])
+
+model = LogisticRegression(3)
 start = time.time()
-for _ in range(10000):
-    model.Step(a, b, Optimizers.StochasticGradientDescent)
+
+for _ in range(1000000):
+    model.Step(a, b, Optimizers.GradientDescent)
     if _ % 500 == 0:
-        print(f"Epoch {_} | Loss: {model.Loss(a,b,Loss.MSE)}")
+        print(f"Epoch {_} | Loss: {model.Loss(a,b,Loss.BCE)}")
 print(time.time()-start)
 print(model.w,model.b)
+print(model.Evaluate(a))
+print(b)
