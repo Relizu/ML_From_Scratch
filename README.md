@@ -21,6 +21,7 @@ Numpy , Pandas(not used yet)
 - LogisticRegression.py  |Containing the model class
 - DecisionTree.py |Containing the model class
 - KNN.py |Containing the model class
+- NaiveBayes.py |Containing the model class
 
 - Loss.py |Containting Loss Functions
 
