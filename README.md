@@ -20,6 +20,7 @@ Numpy , Pandas(not used yet)
 - LinearRegression.py  |Containing the model class
 - LogisticRegression.py  |Containing the model class
 - DecisionTree.py |Containing the model class
+- KNN.py |Containing the model class
 
 - Loss.py |Containting Loss Functions
 
